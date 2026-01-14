@@ -1,37 +1,41 @@
 import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
+import portfolioImage from "../assets/images/portfolio.png";
+import ecommerceImage from "../assets/images/ecommerce.png";
+import chatbotImage from "../assets/images/chatbot.png";
+import weatherAppImage from "../assets/images/weatherapp.png";
 
 export default function ProjectsPage() {
   const [openModal, setOpenModal] = useState(null);
 
-  const projects = [
+  const projects = [  
     {
       name: "Portfolio Website",
-      description: "Personal portfolio built with React + Tailwind.",
-      link: "#",
-      github: "https://github.com/",
-      image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+      description: "Personal portfolio built with React + Tailwind",
+      link: "https://arinze-portfolio.vercel.app/",
+      github: "https://github.com/arinzeugwu347/portfolio",
+      image: portfolioImage,
     },
     {
       name: "E-Commerce Web App",
-      description: "Shopping app with cart, payment UI & admin panel.",
+      description: "Shopping app with cart, payment UI & admin panel",
       link: "#",
-      github: "https://github.com/",
-      image: "https://images.pexels.com/photos/18105/pexels-photo.jpg",
+      github: "https://github.com/arinzeugwu347/ecommerce-project",
+      image: ecommerceImage,
     },
     {
-      name: "Dashboard Analytics",
-      description: "Admin dashboard with charts, authentication & CRUD.",
-      link: "#",
-      github: "https://github.com/",
-      image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg",
+      name: "AI Chatbot Dashboard",
+      description: "Interactive chatbot interface with AI capabilities",
+      link: "https://ariwandoski.github.io/chatbot-project/",
+      github: "https://github.com/arinzeugwu347/chatbot-project",
+      image: chatbotImage,
     },
     {
-      name: "Landing Page",
-      description: "Modern business landing page with marketing sections.",
-      link: "#",
-      github: "https://github.com/",
-      image: "https://images.pexels.com/photos/6476580/pexels-photo-6476580.jpeg",
+      name: "A Weather API App",
+      description: "Get real-time weather updates for any location",
+      link: "https://weather-app-five-rouge-57.vercel.app/",
+      github: "https://github.com/arinzeugwu347/weather-app",
+      image: weatherAppImage,
     },
   ];
 
