@@ -4,6 +4,32 @@ import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaGlobe } from "react-ico
 
 export default function Contact() {
   const [status, setStatus] = useState("");
+  const formAction = "https://formspree.io/f/mvzgkvlw";
+  const redirectUrl = "https://arinze-portfolio.vercel.app/thank-you";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch(formAction, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        window.location.href = redirectUrl;
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
   return (
     <PageWrapper>
       <section className="min-h-screen pt-24 px-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
@@ -11,21 +37,16 @@ export default function Contact() {
           <h1 className="text-4xl font-bold mb-6 text-center">Contact Me</h1>
 
           <form
-            action="https://formspree.io/f/mvzgkvlw"
+            action={formAction}
             method="POST"
-            onSubmit={() => setStatus("sending")}
+            onSubmit={handleSubmit}
             className="space-y-4"
           >
             {/* Honeypot (spam protection) */}
             <input type="text" name="_gotcha" className="hidden" />
 
-            {/* Redirect after submit */}
-            <input
-              type="hidden"
-              name="_next"
-              // value="http://localhost:5173/thank-you"
-              value="https://arinze-portfolio.vercel.app/thank-you"
-            />
+            {/* Redirect after submit (kept for fallback) */}
+            <input type="hidden" name="_next" value={redirectUrl} />
 
             <input
               type="text"
@@ -65,9 +86,15 @@ export default function Contact() {
           </form>
 
           {status === "sending" && (
-            <p className="text-center mt-4 text-sm text-gray-500">
-              Sending...
-            </p>
+            <p className="text-center mt-4 text-sm text-gray-500">Sending...</p>
+          )}
+
+          {status === "sent" && (
+            <p className="text-center mt-4 text-sm text-green-600">Message sent — redirecting...</p>
+          )}
+
+          {status === "error" && (
+            <p className="text-center mt-4 text-sm text-red-600">Failed to send. Please try again.</p>
           )}
         </div>
 
