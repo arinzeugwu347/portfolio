@@ -30,12 +30,12 @@ export default function Hero() {
                     transition={{ delay: 1, type: "spring" }}
                     className="flex justify-center gap-4"
                 >
-                    <Link to="/projects" className="px-2 py-3 bg-blue-600 dark:bg-blue-100 text-white dark:text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700:text-white">View Projects</Link>
-                    <Link to="/contact" className="px-2 py-3 bg-blue-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">Contact</Link>
+                    <Link to="/projects" className="px-2 py-6 ml-2 sm:px-2 sm:py-3.5 bg-blue-600 dark:bg-blue-100 text-white dark:text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700:text-white">View Projects</Link>
+                    <Link to="/contact" className="px-4 py-8 sm:px-2 sm:py-3.5 bg-blue-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">Contact</Link>
                     <a
                         href="/my-resume.pdf"
                         download
-                        className="px-2 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition"
+                        className="px-2 py-6 sm:px-2 sm:py-3.5 mr-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition"
                     >
                         Download CV
                     </a>
