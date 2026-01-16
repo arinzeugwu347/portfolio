@@ -21,7 +21,7 @@ export default function Hero() {
                     transition={{ delay: 0.6, duration: 0.8 }}
                     className="text-xl mb-10 text-gray-600 dark:text-gray-300"
                 >
-                    Frontend Developer • React • Tailwind • Animations
+                    Web Developer • React • Tailwind • JavaScript • ...
                 </motion.p>
 
                 <motion.div
@@ -30,12 +30,12 @@ export default function Hero() {
                     transition={{ delay: 1, type: "spring" }}
                     className="flex justify-center gap-4"
                 >
-                    <Link to="/projects" className="px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white dark:text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600">View Projects</Link>
-                    <Link to="/contact" className="px-6 py-3 bg-gray-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">Contact</Link>
+                    <Link to="/projects" className="px-2 py-3 bg-blue-600 dark:bg-blue-100 text-white dark:text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700:text-white">View Projects</Link>
+                    <Link to="/contact" className="px-2 py-3 bg-blue-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">Contact</Link>
                     <a
-                        href="/file-sample_150kB.pdf"
+                        href="/my-resume.pdf"
                         download
-                        className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition"
+                        className="px-2 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition"
                     >
                         Download CV
                     </a>

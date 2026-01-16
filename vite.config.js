@@ -7,4 +7,3 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/', // important for Netlify routing
 })
-

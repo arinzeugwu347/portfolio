@@ -1,26 +1,30 @@
 import { FaGithub } from "react-icons/fa";
+import portfolioImage from "../assets/images/portfolio.png";
+import ecommerceImage from "../assets/images/ecommerce.png";
+import chatbotImage from "../assets/images/chatbot.png"; 
 
-const projects = [
+
+const projects = [  
   {
     name: "Portfolio Website",
     description: "Personal portfolio built with React + Tailwind",
-    link: "#",
-    github: "https://github.com/",
-    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
+    link: "https://arinze-portfolio.vercel.app/",
+    github: "https://github.com/arinzeugwu347/portfolio",
+    image: portfolioImage,
   },
   {
     name: "E-Commerce Web App",
     description: "Shopping app with cart, payment UI & admin panel",
     link: "#",
-    github: "https://github.com/",
-    image: "https://images.pexels.com/photos/18105/pexels-photo.jpg",
+    github: "https://github.com/arinzeugwu347/ecommerce-project",
+    image: ecommerceImage,
   },
   {
-    name: "Dashboard Analytics",
-    description: "Admin dashboard with charts, auth & CRUD",
-    link: "#",
-    github: "https://github.com/",
-    image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg",
+    name: "AI Chatbot Dashboard",
+    description: "Interactive chatbot interface with AI capabilities",
+    link: "https://ariwandoski.github.io/chatbot-project/",
+    github: "https://github.com/arinzeugwu347/chatbot-project",
+    image: chatbotImage,
   },
 ];
 
@@ -62,14 +66,14 @@ export default function FeaturedProjects() {
                   <a
                     href={project.github}
                     target="_blank"
-                    className="px-3 py-1 rounded-lg border border-blue-500 text-blue-500 dark:text-blue-300 hover:bg-blue-500 hover:text-white transition"
+                    className="px-3 py-1 rounded-lg border border-blue-500 text-blue-500 dark:text-blue-300 hover:bg-blue-500 dark:hover:bg-blue-300 transition"
                   >
                     <FaGithub className="inline mr-1" /> GitHub
                   </a>
                   <a
                     href={project.link}
                     target="_blank"
-                    className="px-3 py-1 rounded-lg bg-blue-500 dark:bg-blue-600 text-white dark:text-white hover:bg-blue-600 dark:hover:bg-blue-700 transition"
+                    className="px-3 py-1 rounded-lg bg-blue-500 dark:bg-blue-300 text-white dark:text-white hover:bg-blue-600 dark:hover:bg-blue-700 transition"
                   >
                     Live Demo
                   </a>

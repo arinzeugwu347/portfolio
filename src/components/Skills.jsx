@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
 
 export default function Skills() {
-  const skills = ["React", "JavaScript", "Tailwind CSS", "Framer Motion", "Node.js", "Git / GitHub", "HTML5", "CSS3", "Responsive Design", "AWS Cloud-Practitioner"];
+  const skills = [
+    "React", 
+    "JavaScript", 
+    "Tailwind CSS", 
+    "PHP", 
+    "Node.js", 
+    "Git / GitHub", 
+    "HTML5", 
+    "CSS3", 
+    "Responsive Design",
+    "MySQL",
+    "MongoDB", 
+    "AWS Cloud-Practitioner"
+  ];
 
   return (
     <section id="skills" className="py-24 px-10 bg-gray-50 dark:bg-gray-900 text-gray-800">

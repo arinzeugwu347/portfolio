@@ -23,7 +23,8 @@ export default function Contact() {
             <input
               type="hidden"
               name="_redirect"
-              value="http://localhost:5173/thank-you"
+              // value="http://localhost:5173/thank-you"
+              value="https://arinze-portfolio.vercel.app/thank-you"
             />
 
             <input
@@ -77,11 +78,11 @@ export default function Contact() {
           </p>
 
           <div className="flex justify-center gap-6 text-3xl">
-            <a href="#" target="_blank" className="hover:text-blue-500 transition"><FaGlobe /></a>
-            <a href="https://github.com/" target="_blank" className="hover:text-blue-500 transition"><FaGithub /></a>
-            <a href="https://linkedin.com/" target="_blank" className="hover:text-blue-500 transition"><FaLinkedin /></a>
-            <a href="https://twitter.com/" target="_blank" className="hover:text-blue-500 transition"><FaTwitter /></a>
-            <a href="https://instagram.com/" target="_blank" className="hover:text-blue-500 transition"><FaInstagram /></a>
+            <a href="https://arinze-portfolio.vercel.app/" target="_blank" className="hover:text-blue-500 transition"><FaGlobe /></a>
+            <a href="https://github.com/arinzeugwu347" target="_blank" className="hover:text-blue-500 transition"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/arinze-ugwu-854977244" target="_blank" className="hover:text-blue-500 transition"><FaLinkedin /></a>
+            <a href="#" target="_blank" className="hover:text-blue-500 transition"><FaTwitter /></a>
+            <a href="#" target="_blank" className="hover:text-blue-500 transition"><FaInstagram /></a>
           </div>
         </div>
       </section>
