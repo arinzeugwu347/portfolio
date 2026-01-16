@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useTheme } from "../ThemeContext.jsx";
 import { FaBars, FaTimes } from "react-icons/fa";
+import profileImage from "../assets/images/profile.jpeg";
 
 export default function Header({ name = "AU" }) {
   const { theme, toggleTheme } = useTheme();
@@ -66,7 +67,7 @@ export default function Header({ name = "AU" }) {
 
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
+                src={profileImage}
                 alt={name}
                 className="w-10 h-10 rounded-full object-cover border-2 border-blue-600 dark:border-blue-400 shadow group-hover:scale-105 transition"
               />
