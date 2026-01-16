@@ -22,7 +22,7 @@ export default function Contact() {
             {/* Redirect after submit */}
             <input
               type="hidden"
-              name="_redirect"
+              name="_next"
               // value="http://localhost:5173/thank-you"
               value="https://arinze-portfolio.vercel.app/thank-you"
             />
