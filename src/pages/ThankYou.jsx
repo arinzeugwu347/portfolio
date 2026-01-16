@@ -14,7 +14,7 @@ export default function ThankYou() {
 
         <Link
           to="/"
-          className="inline-block bg-blue-600 dark:bg-blue-200 hover:bg-blue-700 dark:hover:bg-blue-500 text-white dark:text-gray-900 px-6 py-3 rounded font-medium transition"
+          className="inline-block bg-blue-600 dark:bg-blue-300 hover:bg-blue-700 dark:hover:bg-blue-700 text-white dark:text-black px-6 py-3 rounded font-medium transition"
         >
           Back to Home
         </Link>
