@@ -16,16 +16,16 @@ export default function ProjectsPage() {
       github: "https://github.com/arinzeugwu347/task-board-app",
       image: taskBoardImage,
       techStack: [
-        "React + Vite",
-        "Tailwind CSS",
-        "@dnd-kit (Drag & Drop)",
-        "React Router",
-        "Node.js / Express",
-        "MongoDB + Mongoose",
-        "JWT Auth",
-        "Vercel (Frontend)",
-        "Render (Backend)",
-        "Resend (Emailing)"
+        "React + Vite ",
+        "Tailwind CSS ",
+        "@dnd-kit (Drag & Drop) ",
+        "React Router ",
+        "Node.js / Express ",
+        "MongoDB + Mongoose ",
+        "JWT Auth ",
+        "Vercel (Frontend) ",
+        "Render (Backend) ",
+        "Resend (Emailing) "
       ],
     },
     {
@@ -97,7 +97,7 @@ export default function ProjectsPage() {
 
                   <p className="text-blue-700 dark:text-blue-300 mt-2 flex-grow">Tech Stack</p>
                   <p className="text-gray-700 dark:text-gray-300 mt-1 flex-grow">
-                    {project.techStack}
+                    {project.techStack.join(', ')}
                   </p>
 
                   <div className="flex gap-3 mt-4">
