@@ -84,7 +84,7 @@ export default function FeaturedProjects() {
 
                 <p className="text-blue-700 dark:text-blue-300 mt-2 flex-grow">Tech Stack</p>
                 <p className="text-gray-700 dark:text-gray-300 mt-1 flex-grow">
-                  {project.techStack}
+                  {project.techStack.join(', ')}
                 </p>
 
                 <div className="mt-3 flex gap-2">
