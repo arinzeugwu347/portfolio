@@ -1,20 +1,32 @@
 import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
-import portfolioImage from "../assets/images/portfolio.png";
 import ecommerceImage from "../assets/images/ecommerce.png";
 import chatbotImage from "../assets/images/chatbot.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
+import taskBoardImage from "../assets/images/taskboard.png";
 
 export default function ProjectsPage() {
   const [openModal, setOpenModal] = useState(null);
 
-  const projects = [  
+  const projects = [
     {
-      name: "Portfolio Website",
-      description: "Personal portfolio built with React + Tailwind",
-      link: "https://arinze-portfolio.vercel.app/",
-      github: "https://github.com/arinzeugwu347/portfolio",
-      image: portfolioImage,
+      name: "Task Board",
+      description: "A full-stack Kanban board built from scratch - drag & drop, real backend sync, responsive design, dark/light mode, and rich card modals.",
+      link: "https://ari-task-board-app.vercel.app",
+      github: "https://github.com/arinzeugwu347/task-board-app",
+      image: taskBoardImage,
+      techStack: [
+        "React + Vite",
+        "Tailwind CSS",
+        "@dnd-kit (Drag & Drop)",
+        "React Router",
+        "Node.js / Express",
+        "MongoDB + Mongoose",
+        "JWT Auth",
+        "Vercel (Frontend)",
+        "Render (Backend)",
+        "Resend (Emailing)"
+      ],
     },
     {
       name: "E-Commerce Web App",
@@ -22,6 +34,9 @@ export default function ProjectsPage() {
       link: "#",
       github: "https://github.com/arinzeugwu347/ecommerce-project",
       image: ecommerceImage,
+      techStack: [
+      "React + Vite"
+    ]
     },
     {
       name: "AI Chatbot Dashboard",
@@ -29,6 +44,9 @@ export default function ProjectsPage() {
       link: "https://ariwandoski.github.io/chatbot-project/",
       github: "https://github.com/arinzeugwu347/chatbot-project",
       image: chatbotImage,
+      techStack: [
+      "React + Vite"
+    ]
     },
     {
       name: "A Weather API App",
@@ -36,6 +54,11 @@ export default function ProjectsPage() {
       link: "https://weather-app-five-rouge-57.vercel.app/",
       github: "https://github.com/arinzeugwu347/weather-app",
       image: weatherAppImage,
+      techStack: [
+      "Next + Vercel",
+      "TailWindCSS",
+      "TypeScript"
+    ]
     },
   ];
 
@@ -70,6 +93,11 @@ export default function ProjectsPage() {
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mt-2 flex-grow">
                     {project.description}
+                  </p>
+
+                  <p className="text-blue-700 dark:text-blue-300 mt-2 flex-grow">Tech Stack</p>
+                  <p className="text-gray-700 dark:text-gray-300 mt-1 flex-grow">
+                    {project.techStack}
                   </p>
 
                   <div className="flex gap-3 mt-4">
