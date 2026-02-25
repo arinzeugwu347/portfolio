@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PageWrapper from "../components/PageWrapper";
-import ecommerceImage from "../assets/images/ecommerce.png";
+import ecommerceImage from "../assets/images/yourstore.png";
 import chatbotImage from "../assets/images/chatbot.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
 import taskBoardImage from "../assets/images/taskboard.png";
@@ -30,13 +30,20 @@ export default function ProjectsPage() {
     },
     {
       name: "E-Commerce Web App",
-      description: "Shopping app with cart, payment UI & admin panel",
-      link: "#",
-      github: "https://github.com/arinzeugwu347/ecommerce-project",
+      description: "Shopping app with cart, payment & admin panel Super Production Ready",
+      link: "https://your-store-6yoa.vercel.app",
+      github: "https://github.com/arinzeugwu347/ecommerce-client",
       image: ecommerceImage,
       techStack: [
-      "React + Vite"
-    ]
+        "Next + Vercel ",
+        "TailWindCSS ",
+        "TypeScript ",
+        "JWT Auth ",
+        "Cursor Pagination ",
+        "MongoDB + Mongoose ",
+        "Stripe Payment Gateway",
+        "Secure Password Hashing",
+      ]
     },
     {
       name: "AI Chatbot Dashboard",
@@ -45,8 +52,8 @@ export default function ProjectsPage() {
       github: "https://github.com/arinzeugwu347/chatbot-project",
       image: chatbotImage,
       techStack: [
-      "React + Vite"
-    ]
+        "React + Vite"
+      ]
     },
     {
       name: "A Weather API App",
@@ -55,10 +62,10 @@ export default function ProjectsPage() {
       github: "https://github.com/arinzeugwu347/weather-app",
       image: weatherAppImage,
       techStack: [
-      "Next + Vercel",
-      "TailWindCSS",
-      "TypeScript"
-    ]
+        "Next + Vercel",
+        "TailWindCSS",
+        "TypeScript"
+      ]
     },
   ];
 

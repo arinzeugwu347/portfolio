@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-import ecommerceImage from "../assets/images/ecommerce.png";
+import ecommerceImage from "../assets/images/yourstore.png";
 import taskBoardImage from "../assets/images/taskboard.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
 
@@ -26,12 +26,19 @@ const projects = [
   },
   {
     name: "E-Commerce Web App",
-    description: "Shopping app with cart, payment UI & admin panel",
-    link: "#",
-    github: "https://github.com/arinzeugwu347/ecommerce-project",
+    description: "Shopping app with cart, payment & admin panel Super Production Ready",
+    link: "https://your-store-6yoa.vercel.app",
+    github: "https://github.com/arinzeugwu347/ecommerce-client",
     image: ecommerceImage,
     techStack: [
-      "React + Vite"
+      "Next + Vercel ",
+      "TailWindCSS ",
+      "TypeScript ",
+      "JWT Auth ",
+      "Cursor Pagination ",
+      "MongoDB + Mongoose ",
+      "Stripe Payment Gateway",
+      "Secure Password Hashing",
     ]
   },
   {
