@@ -1,0 +1,51 @@
+/* 1️⃣ Import Tailwind CSS */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 2️⃣ Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3️⃣ Default font */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: white; /* fallback for light mode */
+}
+
+/* 4️⃣ Optional: customize dark mode background transition */
+html.dark body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 5️⃣ Optional: add default link styles */
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* 6️⃣ Buttons hover transition (for all buttons) */
+button {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+/* 7️⃣ Optional: scrollbar styling for modern look */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 4px;
+}
+
+/* 8️⃣ Optional: global dark mode tweaks for background & text */
+html.dark {
+  background-color: #111827; /* dark gray background */
+  color: #e5e7eb; /* light text */
+}
+html.dark a {
+  color: #3b82f6; /* light blue links */
+}
