@@ -1,4 +1,5 @@
 import { FaGithub } from "react-icons/fa";
+import ecommerceImage from "../assets/images/yourstore.png";
 import solidfmImage from "../assets/images/solid.png";
 import taskBoardImage from "../assets/images/taskboard.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
@@ -42,15 +43,24 @@ const projects = [
     ]
   },
   {
-    name: "A Weather API App",
-    description: "Get real-time weather updates for any location",
-    link: "https://weather-app-five-rouge-57.vercel.app/",
-    github: "https://github.com/arinzeugwu347/weather-app",
-    image: weatherAppImage,
+    name: "Solid FM 5-Aside Football",
+    description: "A full-stack web application for managing 5-aside football matches and teams.",
+    link: "https://codejudesolidfm-frontend.vercel.app",
+    github: "https://github.com/arinzeugwu347/codejude-frontend",
+    image: solidfmImage,
     techStack: [
-      "Next + Vercel ",
-      "TailWindCSS ",
-      "TypeScript "
+      "Next.js 16 (App Router) & React 19",
+      "TypeScript & Express 5",
+      "MongoDB (Mongoose 9)",
+      "Socket.io (Real-time Match Updates)",
+      "Zustand State Management",
+      "Cloudinary & Multer (Media Uploads)",
+      "JWT Auth & bcryptjs",
+      "Zod & React Hook Form",
+      "Tailwind CSS 4 & Lucide React",
+      "Sonner (Toast Notifications)",
+      "Axios & Nodemailer",
+      "Jest & Supertest"
     ]
   },
 ];
