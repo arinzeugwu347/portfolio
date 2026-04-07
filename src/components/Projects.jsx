@@ -4,6 +4,8 @@ import ecommerceImage from "../assets/images/yourstore.png";
 import chatbotImage from "../assets/images/chatbot.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
 import taskBoardImage from "../assets/images/taskboard.png";
+import solidfmImage from "../assets/images/solidfm.png";
+import eliteglobalconstructionImage from "../assets/images/eliteglobalconstruction.png";
 
 export default function ProjectsPage() {
   const [openModal, setOpenModal] = useState(null);
@@ -16,16 +18,16 @@ export default function ProjectsPage() {
       github: "https://github.com/arinzeugwu347/task-board-app",
       image: taskBoardImage,
       techStack: [
-        "React + Vite ",
-        "Tailwind CSS ",
-        "@dnd-kit (Drag & Drop) ",
-        "React Router ",
-        "Node.js / Express ",
-        "MongoDB + Mongoose ",
-        "JWT Auth ",
-        "Vercel (Frontend) ",
-        "Render (Backend) ",
-        "Resend (Emailing) "
+        "React + Vite",
+        "Tailwind CSS",
+        "@dnd-kit (Drag & Drop)",
+        "React Router",
+        "Node.js & Express",
+        "MongoDB & Mongoose",
+        "JWT Authentication",
+        "Vercel (Frontend)",
+        "Render (Backend)",
+        "Resend (Emailing)"
       ],
     },
     {
@@ -35,24 +37,55 @@ export default function ProjectsPage() {
       github: "https://github.com/arinzeugwu347/ecommerce-client",
       image: ecommerceImage,
       techStack: [
-        "Next + Vercel ",
-        "TailWindCSS ",
-        "TypeScript ",
-        "JWT Auth ",
-        "Cursor Pagination ",
-        "MongoDB + Mongoose ",
+        "Next.js & Vercel",
+        "Tailwind CSS",
+        "TypeScript",
+        "JWT Authentication",
+        "Cursor Pagination",
+        "MongoDB & Mongoose",
         "Stripe Payment Gateway",
-        "Secure Password Hashing",
+        "Secure Password Hashing"
       ]
     },
     {
-      name: "AI Chatbot Dashboard",
-      description: "Interactive chatbot interface with AI capabilities",
-      link: "https://ariwandoski.github.io/chatbot-project/",
-      github: "https://github.com/arinzeugwu347/chatbot-project",
-      image: chatbotImage,
+      name: "Solid FM 5-Aside Football",
+      description: "A full-stack web application for managing 5-aside football matches and teams.",
+      link: "https://codejudesolidfm-frontend.vercel.app",
+      github: "https://github.com/arinzeugwu347/codejude-frontend",
+      image: solidfmImage,
       techStack: [
-        "React + Vite"
+        "Next.js 16 (App Router) & React 19",
+        "TypeScript & Express 5",
+        "MongoDB (Mongoose 9)",
+        "Socket.io (Real-time Match Updates)",
+        "Zustand State Management",
+        "Cloudinary & Multer (Media Uploads)",
+        "JWT Auth & bcryptjs",
+        "Zod & React Hook Form",
+        "Tailwind CSS 4 & Lucide React",
+        "Sonner (Toast Notifications)",
+        "Axios & Nodemailer",
+        "Jest & Supertest"
+      ]
+    },
+    {
+      name: "Elite Global Construction",
+      description: "A full-stack web application for managing construction projects. using NextJS. This is a monorepo project",
+      link: "https://eliteglobalconstruction.vercel.app",
+      github: "https://github.com/arinzeugwu347/eliteglobalconstruction",
+      image: eliteglobalconstructionImage,
+      techStack: [
+        "Next.js 16 (App Router)",
+        "TypeScript & Node.js",
+        "Tailwind CSS 4 & PostCSS",
+        "Radix UI & Lucide React",
+        "JWT, HTTP-Only Cookies & bcryptjs",
+        "Custom JSON-based Data Persistence",
+        "Framer Motion (Animations)",
+        "React Hook Form & Zod",
+        "Sonner (Toast Notifications)",
+        "Nodemailer (Secure Emailing)",
+        "Vercel (Deployment)"
       ]
     },
     {

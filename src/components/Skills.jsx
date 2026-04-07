@@ -13,8 +13,7 @@ export default function Skills() {
     "Responsive Design",
     "MySQL",
     "MongoDB", 
-    "AWS Cloud-Practitioner",
-    "AI Coding"
+    "AWS Cloud Services"
   ];
 
   return (
