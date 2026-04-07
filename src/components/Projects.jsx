@@ -4,8 +4,8 @@ import ecommerceImage from "../assets/images/yourstore.png";
 import chatbotImage from "../assets/images/chatbot.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
 import taskBoardImage from "../assets/images/taskboard.png";
-import solidfmImage from "../assets/images/solidfm.png";
-import eliteglobalconstructionImage from "../assets/images/eliteglobalconstruction.png";
+import solidfmImage from "../assets/images/solid.png";
+import eliteglobalconstructionImage from "../assets/images/eliteglobal.png";
 
 export default function ProjectsPage() {
   const [openModal, setOpenModal] = useState(null);

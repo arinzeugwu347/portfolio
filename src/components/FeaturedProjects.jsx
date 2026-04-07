@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-import ecommerceImage from "../assets/images/yourstore.png";
+import solidfmImage from "../assets/images/solid.png";
 import taskBoardImage from "../assets/images/taskboard.png";
 import weatherAppImage from "../assets/images/weatherapp.png";
 
