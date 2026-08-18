@@ -9,6 +9,18 @@ export default function PageWrapper({ children, className = "" }) {
   const location = useLocation();
 
   useEffect(() => {
+    let cancelled = false;
+    let realignFrame;
+    let userInteracted = false;
+    const interactionEvents = ["wheel", "touchstart", "pointerdown", "keydown"];
+    const markUserInteraction = () => {
+      userInteracted = true;
+    };
+
+    interactionEvents.forEach((eventName) => {
+      window.addEventListener(eventName, markUserInteraction, { passive: true });
+    });
+
     const focusFrame = window.requestAnimationFrame(() => {
       const targetId = location.hash.slice(1);
       const target = targetId ? document.getElementById(targetId) : null;
@@ -23,7 +35,26 @@ export default function PageWrapper({ children, className = "" }) {
       window.scrollTo({ top: 0, behavior: "auto" });
     });
 
-    return () => window.cancelAnimationFrame(focusFrame);
+    if (location.hash && document.fonts?.ready) {
+      document.fonts.ready.then(() => {
+        if (cancelled || userInteracted || window.location.hash !== location.hash) return;
+
+        realignFrame = window.requestAnimationFrame(() => {
+          if (cancelled || userInteracted) return;
+          document.getElementById(location.hash.slice(1))
+            ?.scrollIntoView({ block: "start", behavior: "auto" });
+        });
+      });
+    }
+
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(focusFrame);
+      if (realignFrame) window.cancelAnimationFrame(realignFrame);
+      interactionEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, markUserInteraction);
+      });
+    };
   }, [location.hash, location.pathname]);
 
   return (
