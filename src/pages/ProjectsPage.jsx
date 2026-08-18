@@ -1,5 +1,5 @@
-import PageWrapper from "../components/PageWrapper";
 import Projects from "../components/Projects";
+import PageWrapper from "../components/PageWrapper";
 
 export default function ProjectsPage() {
   return (

@@ -1,20 +1,47 @@
-import { motion } from "framer-motion";
+const principles = [
+  {
+    number: "01",
+    title: "Clarity before cleverness",
+    body: "Interfaces should make the next decision obvious while keeping complex rules trustworthy underneath.",
+  },
+  {
+    number: "02",
+    title: "Quality at every boundary",
+    body: "Validation, accessible states, failure recovery and maintainable code are product features—not cleanup work.",
+  },
+  {
+    number: "03",
+    title: "Ship with evidence",
+    body: "I pair visual polish with practical testing, performance checks and deliberate production delivery.",
+  },
+];
 
 export default function About() {
   return (
-    <section id="about"
-             className="px-10 py-24 max-w-8xl mx-auto text-center
-                        bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
-      <h2 className="text-4xl font-bold mb-6 text-blue-600 dark:text-blue-400">About Me</h2>
-      <p className="text-lg leading-relaxed">
-        Full-Stack Engineer with strong frontend expertise and growing backend experience. Skilled in building responsive, modern, and user-friendly web applications using React, Next.js, and modern CSS frameworks, with hands-on experience in Node.js, Express, and PHP.
-        Passionate about clean UI design, performance optimization, and continuously improving backend and cloud skills.
-      </p>
-      <p className="text-lg leading-relaxed mt-4">
-        My goal is to craft seamless web experiences that are both visually captivating and highly accessible.
-      </p>
+    <section id="about" className="about-section" aria-labelledby="about-title">
+      <div className="shell">
+        <div className="section-intro section-intro--split">
+          <div>
+            <p className="section-kicker">How I work</p>
+            <h2 id="about-title">Useful software should feel considered from every angle.</h2>
+          </div>
+          <p>
+            My work spans interface architecture, application state, backend integration,
+            data integrity and deployment. I care about the small details because they are
+            what turn a functioning build into a product people can trust.
+          </p>
+        </div>
+
+        <ol className="principles-grid">
+          {principles.map((principle) => (
+            <li key={principle.number} className="principle-card">
+              <span>{principle.number}</span>
+              <h3>{principle.title}</h3>
+              <p>{principle.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
     </section>
   );
 }
-
-
