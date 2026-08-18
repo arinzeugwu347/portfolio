@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
+import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
 export default function ProjectCard({ project, variant = "standard", headingAs = "h3" }) {
+  const reduceMotion = useReducedMotion();
   const {
     id,
     title,
@@ -20,9 +22,16 @@ export default function ProjectCard({ project, variant = "standard", headingAs =
   const Heading = headingAs;
 
   return (
-    <article
+    <motion.article
       className={`project-card project-card--${variant}`}
       aria-labelledby={`${id}-title`}
+      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.14 }}
+      transition={{
+        duration: reduceMotion ? 0 : 0.58,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       <figure className="project-card__media">
         <img
@@ -89,7 +98,7 @@ export default function ProjectCard({ project, variant = "standard", headingAs =
           ) : null}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 

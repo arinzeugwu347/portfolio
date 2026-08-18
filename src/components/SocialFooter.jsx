@@ -1,6 +1,7 @@
 import { FiArrowUp, FiGithub, FiLinkedin } from "react-icons/fi";
 import { useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { profile } from "../data/profile";
 
 export default function SocialFooter() {
   const reduceMotion = useReducedMotion();
@@ -26,22 +27,22 @@ export default function SocialFooter() {
         <div className="footer-brand">
           <span className="brand__mark" aria-hidden="true">AU</span>
           <div>
-            <strong>Arinze Ugwu</strong>
-            <p>Full-stack engineering with product care.</p>
+            <strong>{profile.publicName}</strong>
+            <p>Software engineering with product care and technical depth.</p>
           </div>
         </div>
 
         <div className="footer-links" aria-label="Professional profiles">
-          <a href="https://github.com/arinzeugwu347" target="_blank" rel="noreferrer">
+          <a href={profile.github} target="_blank" rel="noreferrer">
             <FiGithub aria-hidden="true" /> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/arinze-ugwu-854977244" target="_blank" rel="noreferrer">
+          <a href={profile.linkedIn} target="_blank" rel="noreferrer">
             <FiLinkedin aria-hidden="true" /> LinkedIn
           </a>
         </div>
 
         <div className="footer-meta">
-          <p>© {new Date().getFullYear()} Arinze Ugwu</p>
+          <p>© {new Date().getFullYear()} {profile.publicName}</p>
           <button type="button" onClick={scrollToTop}>
             Back to top <FiArrowUp aria-hidden="true" />
           </button>

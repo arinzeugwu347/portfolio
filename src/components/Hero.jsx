@@ -2,8 +2,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FiArrowDownRight, FiArrowUpRight, FiDownload } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import profileImage from "../assets/images/profile.jpeg";
+import { profile } from "../data/profile";
 
-const strengths = ["Accessible interfaces", "Reliable data flows", "Polished delivery"];
+const strengths = ["5+ years building", "Full-stack & backend", "Testing & security"];
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
@@ -20,25 +21,30 @@ export default function Hero() {
         <div className="hero__content">
           <motion.div className="availability" {...enter()}>
             <span aria-hidden="true" />
-            Available for thoughtful product work
+            Building dependable products and systems
           </motion.div>
 
           <motion.p className="hero__eyebrow" {...enter(0.04)}>
-            Full-stack engineering · Lagos, Nigeria
+            {profile.title} · {profile.location}
           </motion.p>
           <motion.h1 id="hero-title" {...enter(0.08)}>
             I turn complex workflows into <em>calm, high-trust</em> products.
           </motion.h1>
           <motion.p className="hero__lede" {...enter(0.14)}>
-            I&apos;m Arinze Ugwu, a product-minded engineer building responsive web
-            experiences where thoughtful interaction design meets dependable software.
+            I&apos;m {profile.publicName}, a software engineer with {profile.experience} of
+            experience building web and backend systems, currently developing full-stack
+            and backend products at {profile.currentCompany}.
           </motion.p>
 
           <motion.div className="hero__actions" {...enter(0.2)}>
             <Link className="button button--primary" to="/projects">
               Explore selected work <FiArrowUpRight aria-hidden="true" />
             </Link>
-            <a className="button button--secondary" href="/my-resume.pdf" download>
+            <a
+              className="button button--secondary"
+              href={profile.resumePath}
+              download={profile.resumeFileName}
+            >
               Résumé <FiDownload aria-hidden="true" />
             </a>
           </motion.div>
@@ -58,8 +64,8 @@ export default function Hero() {
               fetchPriority="high"
             />
             <div className="hero-portrait__caption">
-              <span>Product-minded engineer</span>
-              <strong>Design clarity. Engineering depth.</strong>
+              <span>Software engineer</span>
+              <strong>Web. Backend. Quality. Security.</strong>
             </div>
           </div>
           <div className="hero-portrait__badge" aria-hidden="true">

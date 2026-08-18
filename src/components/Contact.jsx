@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { FiArrowUpRight, FiGithub, FiLinkedin, FiSend } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
+import { profile } from "../data/profile";
 
 const socialLinks = [
-  { label: "GitHub", href: "https://github.com/arinzeugwu347", icon: FiGithub },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/arinze-ugwu-854977244", icon: FiLinkedin },
+  { label: "GitHub", href: profile.github, icon: FiGithub },
+  { label: "LinkedIn", href: profile.linkedIn, icon: FiLinkedin },
 ];
 
 export default function Contact() {
@@ -44,20 +45,24 @@ export default function Contact() {
       <div className="shell contact-layout">
         <div className="contact-copy">
           <p className="section-kicker">Start a conversation</p>
-          <h1 id="contact-title">Have a thoughtful product to build?</h1>
+          <h1 id="contact-title">Need dependable software built with care?</h1>
           <p className="contact-copy__lede">
-            Tell me what you&apos;re working on, what needs to improve, or where the
-            experience feels stuck. I&apos;ll respond with care and practical next steps.
+            Tell me what you&apos;re building, what needs to improve, or where a system
+            feels unreliable. I&apos;ll respond with care and practical next steps.
           </p>
 
           <div className="contact-details">
             <div>
               <span>Based in</span>
-              <strong>Lagos, Nigeria</strong>
+              <strong>{profile.location}</strong>
             </div>
             <div>
-              <span>Best fit</span>
-              <strong>Product engineering & frontend systems</strong>
+              <span>Current role</span>
+              <strong>{profile.currentRole}</strong>
+            </div>
+            <div>
+              <span>Email</span>
+              <a href={`mailto:${profile.email}`}>{profile.email}</a>
             </div>
           </div>
 

@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
+import { FiDownload, FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { profile } from "../data/profile";
 import { useTheme } from "../theme.js";
 
 const navigation = [
   { label: "Home", to: "/" },
+  { label: "Experience", to: "/#experience", hash: true },
   { label: "Work", to: "/projects" },
   { label: "Contact", to: "/contact" },
 ];
@@ -94,11 +96,11 @@ export default function Header() {
   return (
     <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
       <div className="site-header__inner">
-        <Link className="brand" to="/" aria-label="Arinze Ugwu, home" onClick={() => setOpenPath(null)}>
+        <Link className="brand" to="/" aria-label={`${profile.publicName}, home`} onClick={() => setOpenPath(null)}>
           <span className="brand__mark" aria-hidden="true">AU</span>
           <span className="brand__copy">
-            <strong>Arinze Ugwu</strong>
-            <span>Full-stack engineer</span>
+            <strong>{profile.publicName}</strong>
+            <span>{profile.title}</span>
           </span>
         </Link>
 
@@ -108,7 +110,7 @@ export default function Header() {
               key={item.to}
               to={item.to}
               end={item.to === "/"}
-              className={({ isActive }) => `nav-link${isActive ? " nav-link--active" : ""}`}
+              className={({ isActive }) => `nav-link${isActive && !item.hash ? " nav-link--active" : ""}`}
             >
               {item.label}
             </NavLink>
@@ -124,6 +126,13 @@ export default function Header() {
           >
             {theme === "light" ? <FiMoon aria-hidden="true" /> : <FiSun aria-hidden="true" />}
           </button>
+          <a
+            className="header-resume"
+            href={profile.resumePath}
+            download={profile.resumeFileName}
+          >
+            Résumé <FiDownload aria-hidden="true" />
+          </a>
           <Link className="header-cta" to="/contact">Let&apos;s talk</Link>
           <button
             ref={menuButtonRef}
@@ -178,14 +187,18 @@ export default function Header() {
                 key={item.to}
                 to={item.to}
               end={item.to === "/"}
-              className={({ isActive }) => `mobile-nav__link${isActive ? " mobile-nav__link--active" : ""}`}
+              className={({ isActive }) => `mobile-nav__link${isActive && !item.hash ? " mobile-nav__link--active" : ""}`}
               onClick={() => closeMenuForNavigation(item.to)}
             >
                 <span aria-hidden="true">0{index + 1}</span>
                 {item.label}
               </NavLink>
             ))}
-            <a className="mobile-nav__resume" href="/my-resume.pdf" download>
+            <a
+              className="mobile-nav__resume"
+              href={profile.resumePath}
+              download={profile.resumeFileName}
+            >
               Download résumé
             </a>
           </nav>
