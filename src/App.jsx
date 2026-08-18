@@ -1,5 +1,5 @@
 import { Suspense, lazy, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import {
   BrowserRouter as Router,
   Route,
@@ -19,21 +19,21 @@ const siteUrl = "https://arinze-portfolio.vercel.app";
 
 const pageMetadata = {
   "/": {
-    title: "Arinze Ugwu — Full-stack engineer",
+    title: "Arinze Ugwu — Software engineer",
     description:
-      "Portfolio of Arinze Ugwu, a full-stack engineer building accessible, dependable and polished web products.",
+      "Portfolio of Arinze Ugwu, a software engineer with 5+ years building dependable web, backend, testing, and security-focused systems.",
     indexable: true,
   },
   "/projects": {
     title: "Selected work — Arinze Ugwu",
     description:
-      "Explore selected full-stack platforms, local-first tools and responsive product experiences built by Arinze Ugwu.",
+      "Explore selected full-stack platforms, local-first tools, backend systems, and responsive product experiences built or contributed to by Arinze Ugwu.",
     indexable: true,
   },
   "/contact": {
     title: "Contact — Arinze Ugwu",
     description:
-      "Start a conversation with Arinze Ugwu about product engineering, frontend systems and thoughtful web experiences.",
+      "Start a conversation with Arinze Ugwu about software engineering, backend systems, product interfaces, and technical quality.",
     indexable: true,
   },
   "/thank-you": {
@@ -69,8 +69,6 @@ function RouteEffects() {
     updateMetaContent('meta[property="og:url"]', canonicalUrl);
     updateMetaContent('meta[name="twitter:title"]', metadata.title);
     updateMetaContent('meta[name="twitter:description"]', metadata.description);
-    window.scrollTo({ top: 0, behavior: "auto" });
-
   }, [location.pathname]);
 
   return null;
@@ -102,12 +100,14 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <Router>
-      <a className="skip-link" href="#main-content">Skip to content</a>
-      <RouteEffects />
-      <Header />
-      <AnimatedRoutes />
-      <SocialFooter />
-    </Router>
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <RouteEffects />
+        <Header />
+        <AnimatedRoutes />
+        <SocialFooter />
+      </Router>
+    </MotionConfig>
   );
 }

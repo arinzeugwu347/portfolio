@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const principles = [
   {
     number: "01",
@@ -20,25 +22,31 @@ export default function About() {
   return (
     <section id="about" className="about-section" aria-labelledby="about-title">
       <div className="shell">
-        <div className="section-intro section-intro--split">
+        <Reveal className="section-intro section-intro--split">
           <div>
             <p className="section-kicker">How I work</p>
             <h2 id="about-title">Useful software should feel considered from every angle.</h2>
           </div>
           <p>
-            My work spans interface architecture, application state, backend integration,
-            data integrity and deployment. I care about the small details because they are
-            what turn a functioning build into a product people can trust.
+            My experience spans full-stack products, backend services, technical QA,
+            benchmark validation, API and access-control testing, fuzzing preparation,
+            and smart-contract review. I care about the small details because they turn a
+            functioning build into software people can trust.
           </p>
-        </div>
+        </Reveal>
 
         <ol className="principles-grid">
-          {principles.map((principle) => (
-            <li key={principle.number} className="principle-card">
+          {principles.map((principle, index) => (
+            <Reveal
+              key={principle.number}
+              as="li"
+              className="principle-card"
+              delay={index * 0.06}
+            >
               <span>{principle.number}</span>
               <h3>{principle.title}</h3>
               <p>{principle.body}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </div>
