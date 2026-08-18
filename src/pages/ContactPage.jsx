@@ -1,5 +1,5 @@
-import PageWrapper from "../components/PageWrapper";
 import Contact from "../components/Contact";
+import PageWrapper from "../components/PageWrapper";
 
 export default function ContactPage() {
   return (

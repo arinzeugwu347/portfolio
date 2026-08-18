@@ -1,37 +1,48 @@
-import { motion } from "framer-motion";
+const capabilityGroups = [
+  {
+    label: "Frontend systems",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Responsive CSS", "Accessibility"],
+  },
+  {
+    label: "Backend & data",
+    skills: ["Node.js", "Express", "PHP", "REST APIs", "MongoDB", "MySQL"],
+  },
+  {
+    label: "Product quality",
+    skills: ["Vitest", "Testing Library", "Jest", "Validation", "Performance", "UX detail"],
+  },
+  {
+    label: "Delivery",
+    skills: ["Git & GitHub", "Vercel", "AWS", "CI workflows", "Production debugging", "Technical writing"],
+  },
+];
 
 export default function Skills() {
-  const skills = [
-    "React", 
-    "JavaScript", 
-    "Tailwind CSS", 
-    "PHP", 
-    "Node.js", 
-    "Git / GitHub", 
-    "HTML5", 
-    "CSS3", 
-    "Responsive Design",
-    "MySQL",
-    "MongoDB", 
-    "AWS Cloud Services"
-  ];
-
   return (
-    <section id="skills" className="py-24 px-10 bg-gray-50 dark:bg-gray-900 text-gray-800">
-      <h2 className="text-4xl font-bold text-center text-blue-600 dark:text-blue-400 mb-12">Skills</h2>
-      <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
-        {skills.map((skill, i) => (
-          <motion.div
-            key={skill}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.05 }}
-            className="px-6 py-3 bg-white dark:bg-gray-800 shadow-md rounded-full text-gray-700 dark:text-gray-200 font-medium hover:shadow-lg transition cursor-default"
-          >
-            {skill}
-          </motion.div>
-        ))}
+    <section id="capabilities" className="capabilities-section" aria-labelledby="capabilities-title">
+      <div className="shell capabilities-layout">
+        <div className="capabilities-copy">
+          <p className="section-kicker">Capabilities</p>
+          <h2 id="capabilities-title">From first interaction to production release.</h2>
+          <p>
+            I work across the product surface, connecting frontend craft with the
+            engineering foundations that keep an application fast, resilient and easy to evolve.
+          </p>
+        </div>
+
+        <div className="capabilities-list">
+          {capabilityGroups.map((group, index) => (
+            <section key={group.label} className="capability-group">
+              <div className="capability-group__heading">
+                <span aria-hidden="true">0{index + 1}</span>
+                <h3>{group.label}</h3>
+              </div>
+              <ul>
+                {group.skills.map((skill) => <li key={skill}>{skill}</li>)}
+              </ul>
+            </section>
+          ))}
+        </div>
       </div>
     </section>
   );

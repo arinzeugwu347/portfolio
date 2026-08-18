@@ -1,214 +1,28 @@
-import { useState } from "react";
-import PageWrapper from "../components/PageWrapper";
-import ecommerceImage from "../assets/images/yourstore.png";
-import chatbotImage from "../assets/images/chatbot.png";
-import weatherAppImage from "../assets/images/weatherapp.png";
-import taskBoardImage from "../assets/images/taskboard.png";
-import solidfmImage from "../assets/images/solid.png";
-import eliteglobalconstructionImage from "../assets/images/eliteglobal.png";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../data/projects";
 
-export default function ProjectsPage() {
-  const [openModal, setOpenModal] = useState(null);
-
-  const projects = [
-    {
-      name: "Task Board",
-      description: "A full-stack Kanban board built from scratch - drag & drop, real backend sync, responsive design, dark/light mode, and rich card modals.",
-      link: "https://ari-task-board-app.vercel.app",
-      github: "https://github.com/arinzeugwu347/task-board-app",
-      image: taskBoardImage,
-      techStack: [
-        "React + Vite",
-        "Tailwind CSS",
-        "@dnd-kit (Drag & Drop)",
-        "React Router",
-        "Node.js & Express",
-        "MongoDB & Mongoose",
-        "JWT Authentication",
-        "Vercel (Frontend)",
-        "Render (Backend)",
-        "Resend (Emailing)"
-      ],
-    },
-    {
-      name: "E-Commerce Web App",
-      description: "Shopping app with cart, payment & admin panel Super Production Ready",
-      link: "https://your-store-6yoa.vercel.app",
-      github: "https://github.com/arinzeugwu347/ecommerce-client",
-      image: ecommerceImage,
-      techStack: [
-        "Next.js & Vercel",
-        "Tailwind CSS",
-        "TypeScript",
-        "JWT Authentication",
-        "Cursor Pagination",
-        "MongoDB & Mongoose",
-        "Stripe Payment Gateway",
-        "Secure Password Hashing"
-      ]
-    },
-    {
-      name: "Solid FM 5-Aside Football",
-      description: "A full-stack web application for managing 5-aside football matches and teams.",
-      link: "https://codejudesolidfm-frontend.vercel.app",
-      github: "https://github.com/arinzeugwu347/codejude-frontend",
-      image: solidfmImage,
-      techStack: [
-        "Next.js 16 (App Router) & React 19",
-        "TypeScript & Express 5",
-        "MongoDB (Mongoose 9)",
-        "Socket.io (Real-time Match Updates)",
-        "Zustand State Management",
-        "Cloudinary & Multer (Media Uploads)",
-        "JWT Auth & bcryptjs",
-        "Zod & React Hook Form",
-        "Tailwind CSS 4 & Lucide React",
-        "Sonner (Toast Notifications)",
-        "Axios & Nodemailer",
-        "Jest & Supertest"
-      ]
-    },
-    {
-      name: "Elite Global Construction",
-      description: "A full-stack web application for managing construction projects. using NextJS. This is a monorepo project",
-      link: "https://eliteglobalconstruction.vercel.app",
-      github: "https://github.com/arinzeugwu347/eliteglobalconstruction",
-      image: eliteglobalconstructionImage,
-      techStack: [
-        "Next.js 16 (App Router)",
-        "TypeScript & Node.js",
-        "Tailwind CSS 4 & PostCSS",
-        "Radix UI & Lucide React",
-        "JWT, HTTP-Only Cookies & bcryptjs",
-        "Custom JSON-based Data Persistence",
-        "Framer Motion (Animations)",
-        "React Hook Form & Zod",
-        "Sonner (Toast Notifications)",
-        "Nodemailer (Secure Emailing)",
-        "Vercel (Deployment)"
-      ]
-    },
-    {
-      name: "A Weather API App",
-      description: "Get real-time weather updates for any location",
-      link: "https://weather-app-five-rouge-57.vercel.app/",
-      github: "https://github.com/arinzeugwu347/weather-app",
-      image: weatherAppImage,
-      techStack: [
-        "Next + Vercel",
-        "TailWindCSS",
-        "TypeScript"
-      ]
-    },
-  ];
-
+export default function Projects() {
   return (
-    <PageWrapper>
-      <section className="px-6 py-20 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-4 text-blue-600 dark:text-blue-400">
-            Web Applications
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-12">
-            Explore the applications I’ve built using modern web technologies.
+    <section
+      className="projects-section projects-section--archive"
+      aria-labelledby="projects-page-title"
+    >
+      <div className="projects-section__inner">
+        <header className="section-heading section-heading--projects-page">
+          <p className="section-kicker">Project archive</p>
+          <h1 id="projects-page-title">Digital products built with purpose.</h1>
+          <p>
+            Explore full-stack platforms, focused utilities, and responsive web
+            experiences built from product thinking through production delivery.
           </p>
+        </header>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-800 shadow rounded-xl overflow-hidden hover:scale-[1.02] hover:shadow-xl transition flex flex-col"
-              >
-                {/* Preview Click -> Opens Modal */}
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="w-full h-48 object-cover cursor-pointer"
-                  onClick={() => setOpenModal(project)}
-                />
-
-                <div className="p-6 flex flex-col">
-                  <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">
-                    {project.name}
-                  </h3>
-                  <p className="text-gray-700 dark:text-gray-300 mt-2 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <p className="text-blue-700 dark:text-blue-300 mt-2 flex-grow">Tech Stack</p>
-                  <p className="text-gray-700 dark:text-gray-300 mt-1 flex-grow">
-                    {project.techStack.join(', ')}
-                  </p>
-
-                  <div className="flex gap-3 mt-4">
-                    {/* LIVE LINK */}
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      className="px-4 py-2 rounded-lg bg-blue-500 dark:bg-blue-300 text-white dark:text-black hover:bg-blue-600 dark:hover:bg-blue-400 transition"
-                    >
-                      Live Demo
-                    </a>
-
-                    {/* GITHUB LINK */}
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      className="px-4 py-2 rounded-lg border border-blue-500 text-blue-500 dark:text-black hover:bg-blue-500 hover:text-white dark:hover:bg-blue-300 transition"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="projects-grid projects-grid--archive">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} headingAs="h2" />
+          ))}
         </div>
-      </section>
-
-      {/* MODAL POPUP */}
-      {openModal && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50 p-4">
-          <div className="bg-white dark:bg-gray-800 rounded-xl max-w-xl w-full overflow-hidden shadow-lg relative">
-            <img
-              src={openModal.image}
-              alt="project preview"
-              className="w-full h-64 object-cover"
-            />
-            <div className="p-6 text-center">
-              <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                {openModal.name}
-              </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-4">{openModal.description}</p>
-
-              <div className="flex justify-center gap-4">
-                <a
-                  href={openModal.link}
-                  target="_blank"
-                  className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-                >
-                  Live Demo
-                </a>
-                <a
-                  href={openModal.github}
-                  target="_blank"
-                  className="px-4 py-2 border border-blue-500 text-blue-500 dark:text-blue-300 rounded-lg hover:bg-blue-500 hover:text-white"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
-
-            {/* CLOSE BUTTON */}
-            <button
-              onClick={() => setOpenModal(null)}
-              className="absolute top-3 right-3 text-2xl text-gray-500 hover:text-red-500"
-            >
-              ✖
-            </button>
-          </div>
-        </div>
-      )}
-    </PageWrapper>
+      </div>
+    </section>
   );
 }

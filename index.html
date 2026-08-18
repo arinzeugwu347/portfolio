@@ -1,27 +1,75 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#153f34" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("portfolio-theme");
+          document.documentElement.dataset.theme =
+            saved === "light" || saved === "dark"
+              ? saved
+              : matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <meta
+      name="description"
+      content="Portfolio of Arinze Ugwu, a full-stack engineer building accessible, dependable and polished web products."
+    />
+    <meta name="author" content="Arinze Ugwu" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://arinze-portfolio.vercel.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/AU_logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/AU_logo.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>portfolio</title>
-</head>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arinze Ugwu — Portfolio" />
+    <meta property="og:title" content="Arinze Ugwu — Full-stack engineer" />
+    <meta
+      property="og:description"
+      content="Product-minded engineering where thoughtful interaction design meets dependable software."
+    />
+    <meta property="og:url" content="https://arinze-portfolio.vercel.app/" />
+    <meta property="og:image" content="https://arinze-portfolio.vercel.app/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Arinze Ugwu, full-stack engineer — portfolio preview" />
 
-<body>
-  <div id="root"></div>
-  
-  <!-- Tailwind CSS CDN -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arinze Ugwu — Full-stack engineer" />
+    <meta
+      name="twitter:description"
+      content="Accessible interfaces, reliable data flows and polished product delivery."
+    />
+    <meta name="twitter:image" content="https://arinze-portfolio.vercel.app/social-preview.png" />
 
-  <!-- Optional: Enable dark mode via class strategy -->
-  <!-- <script>
-    tailwind.config = {
-      darkMode: 'class',
-    }
-  </script> -->
-
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Arinze Ugwu",
+        "url": "https://arinze-portfolio.vercel.app/",
+        "jobTitle": "Full-stack engineer",
+        "sameAs": [
+          "https://github.com/arinzeugwu347",
+          "https://www.linkedin.com/in/arinze-ugwu-854977244"
+        ]
+      }
+    </script>
+    <title>Arinze Ugwu — Full-stack engineer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>This portfolio needs JavaScript to display its project pages.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

@@ -1,47 +1,74 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { FiArrowDownRight, FiArrowUpRight, FiDownload } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import profileImage from "../assets/images/profile.jpeg";
+
+const strengths = ["Accessible interfaces", "Reliable data flows", "Polished delivery"];
 
 export default function Hero() {
-    return (
-        <section className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-6">
-            <div className="text-center">
+  const reduceMotion = useReducedMotion();
+  const enter = (delay = 0) => ({
+    initial: reduceMotion ? false : { opacity: 0, y: 22 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: reduceMotion ? 0 : 0.65, delay, ease: [0.22, 1, 0.36, 1] },
+  });
 
-                <motion.h1
-                    initial={{ opacity: 0, y: -40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-6xl font-extrabold mb-6"
-                >
-                    Hi, I'm <span className="text-blue-600 dark:text-blue-400">Arinze Ugwu</span>
-                </motion.h1>
+  return (
+    <section className="hero" aria-labelledby="hero-title">
+      <div className="hero__ambient" aria-hidden="true" />
+      <div className="shell hero__grid">
+        <div className="hero__content">
+          <motion.div className="availability" {...enter()}>
+            <span aria-hidden="true" />
+            Available for thoughtful product work
+          </motion.div>
 
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
-                    className="text-xl mb-10 text-gray-600 dark:text-gray-300"
-                >
-                    Web Developer • React • Tailwind • JavaScript • ...
-                </motion.p>
+          <motion.p className="hero__eyebrow" {...enter(0.04)}>
+            Full-stack engineering · Lagos, Nigeria
+          </motion.p>
+          <motion.h1 id="hero-title" {...enter(0.08)}>
+            I turn complex workflows into <em>calm, high-trust</em> products.
+          </motion.h1>
+          <motion.p className="hero__lede" {...enter(0.14)}>
+            I&apos;m Arinze Ugwu, a product-minded engineer building responsive web
+            experiences where thoughtful interaction design meets dependable software.
+          </motion.p>
 
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 1, type: "spring" }}
-                    className="flex justify-center gap-4"
-                >
-                    <Link to="/projects" className="px-2 py-6 ml-2 sm:px-2 sm:py-3.5 bg-blue-600 dark:bg-blue-100 text-white dark:text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-700:text-white">View Projects</Link>
-                    <Link to="/contact" className="px-4 py-8 sm:px-2 sm:py-3.5 bg-blue-200 dark:bg-gray-700 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600">Contact</Link>
-                    <a
-                        href="/my-resume.pdf"
-                        download
-                        className="px-2 py-6 sm:px-2 sm:py-3.5 mr-2 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition"
-                    >
-                        Download CV
-                    </a>
+          <motion.div className="hero__actions" {...enter(0.2)}>
+            <Link className="button button--primary" to="/projects">
+              Explore selected work <FiArrowUpRight aria-hidden="true" />
+            </Link>
+            <a className="button button--secondary" href="/my-resume.pdf" download>
+              Résumé <FiDownload aria-hidden="true" />
+            </a>
+          </motion.div>
 
-                </motion.div>
+          <motion.ul className="hero__strengths" aria-label="Engineering strengths" {...enter(0.26)}>
+            {strengths.map((strength) => <li key={strength}>{strength}</li>)}
+          </motion.ul>
+        </div>
+
+        <motion.div className="hero-portrait" {...enter(0.12)}>
+          <div className="hero-portrait__frame">
+            <img
+              src={profileImage}
+              alt="Arinze Ugwu"
+              width="1079"
+              height="1080"
+              fetchPriority="high"
+            />
+            <div className="hero-portrait__caption">
+              <span>Product-minded engineer</span>
+              <strong>Design clarity. Engineering depth.</strong>
             </div>
-        </section>
-    );
+          </div>
+          <div className="hero-portrait__badge" aria-hidden="true">
+            <span>Build</span>
+            <FiArrowDownRight />
+            <span>Refine</span>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 }

@@ -1,0 +1,17 @@
+{
+  "name": "Arinze Ugwu — Portfolio",
+  "short_name": "Arinze Ugwu",
+  "description": "Selected product engineering work by Arinze Ugwu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f1e9",
+  "theme_color": "#153f34",
+  "icons": [
+    {
+      "src": "/AU_logo.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
