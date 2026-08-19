@@ -1,5 +1,5 @@
 import { FiArrowUp, FiGithub, FiLinkedin } from "react-icons/fi";
-import { useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { profile } from "../data/profile";
 
@@ -15,20 +15,35 @@ export default function SocialFooter() {
 
   return (
     <footer className="site-footer">
-      <div className="shell site-footer__cta">
+      <motion.div
+        className="shell site-footer__cta"
+        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: reduceMotion ? 0 : 0.66,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         <div>
           <p className="section-kicker">A strong product starts with a clear conversation.</p>
           <h2>Let&apos;s make the next version better.</h2>
         </div>
         <Link className="button button--light" to="/contact">Start a project</Link>
-      </div>
+      </motion.div>
 
-      <div className="shell site-footer__bottom">
+      <motion.div
+        className="shell site-footer__bottom"
+        initial={reduceMotion ? false : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.35 }}
+        transition={{ duration: reduceMotion ? 0 : 0.72, delay: reduceMotion ? 0 : 0.08 }}
+      >
         <div className="footer-brand">
           <span className="brand__mark" aria-hidden="true">AU</span>
           <div>
             <strong>{profile.publicName}</strong>
-            <p>Software engineering with product care and technical depth.</p>
+            <p>Software engineering, AI evaluation, and technical quality.</p>
           </div>
         </div>
 
@@ -47,7 +62,7 @@ export default function SocialFooter() {
             Back to top <FiArrowUp aria-hidden="true" />
           </button>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

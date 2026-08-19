@@ -1,13 +1,13 @@
 export const profile = Object.freeze({
   publicName: "Arinze Ugwu",
   fullName: "Arinze Ugwu Anslem",
-  title: "Software Engineer",
+  title: "Software Engineer & AI Evaluator",
   currentRole: "Full-Stack / Backend Engineer",
   currentCompany: "Nanocodes Programming Limited",
   experience: "5+ years",
   location: "Enugu, Nigeria",
   summary:
-    "Software engineer with 5+ years of experience building web and backend systems, currently developing full-stack and backend products at Nanocodes Programming Limited. My work also spans technical QA, benchmark engineering, cybersecurity, fuzz-testing preparation, and smart-contract review.",
+    "Software engineer and AI evaluator with 5+ years of experience building web and backend systems, currently developing full-stack and backend products at Nanocodes Programming Limited. My work also spans coding-agent evaluation, technical QA, benchmark engineering, cybersecurity, fuzz-testing preparation, and smart-contract review.",
   resumePath: "/my-resume.pdf",
   resumeFileName: "Arinze_Ugwu_Anslem_Resume_2026.pdf",
   email: "arinzeugwu347@gmail.com",
@@ -38,13 +38,13 @@ export const experienceEntries = Object.freeze([
   Object.freeze({
     id: "mercor",
     dates: "April - July 2026",
-    title: "Selected Software Engineering Evaluation Work",
+    title: "Selected AI Evaluation & Software Quality Work",
     organization: "Mercor",
     meta: "Remote · Project-based portfolio",
     summary:
-      "Reviewed repository-level software work, technical answers, search quality, prompts, rubrics, and command-line execution using reproducible evidence and project-specific quality frameworks.",
+      "Evaluated coding-agent trajectories, repository-level software work, technical answers, factuality, search quality, prompts, rubrics, and command-line execution using reproducible evidence and project-specific quality frameworks.",
     highlights: Object.freeze([
-      "Verified source changes, commands, configuration, APIs, Linux and CI workflows, test results, and final claims before writing concise quality rationales.",
+      "Worked across side-by-side code QA, coding-agent baselining, trajectory review, factuality and search-quality evaluation, prompt and rubric auditing, and CLI comparison tasks.",
       "Completed 20 approved repository tasks and received top-writer recognition, including several C, C++, and C# evaluations accepted on first submission.",
       "Progressed into reviewer responsibilities, approving defensible work and returning submissions only when material corrections were required.",
     ]),
@@ -76,6 +76,16 @@ export const experienceEntries = Object.freeze([
       "Reviewed six Solidity contracts totaling approximately 1,115 lines and documented 35 security, correctness, and maintainability findings.",
       "Used Hardhat, Foundry, Slither, structured API requests, logs, payload analysis, and realistic threat scenarios.",
     ]),
+  }),
+  Object.freeze({
+    id: "ai-systems-evaluation",
+    dates: "March - August 2024",
+    title: "AI Systems Evaluator / Technical QA Reviewer",
+    organization: "Contract / Project-Based Platforms",
+    meta: "Remote",
+    summary:
+      "Evaluated and ranked AI-generated text and code for factual accuracy, technical correctness, instruction adherence, completeness, and edge-case handling; documented hallucinations, contradictions, missed constraints, weak assumptions, and unsupported conclusions.",
+    highlights: Object.freeze([]),
   }),
   Object.freeze({
     id: "aestart",
@@ -115,6 +125,18 @@ export const experienceEntries = Object.freeze([
 ]);
 
 export const skillGroups = Object.freeze([
+  Object.freeze({
+    label: "AI evaluation & benchmark quality",
+    skills: Object.freeze([
+      "Coding-agent benchmarking",
+      "Trajectory review",
+      "Side-by-side response ranking",
+      "Factuality research",
+      "Prompt & rubric auditing",
+      "Source verification",
+      "Failure-mode analysis",
+    ]),
+  }),
   Object.freeze({
     label: "Frontend systems",
     skills: Object.freeze([
@@ -191,6 +213,36 @@ export const skillGroups = Object.freeze([
 
 export const experienceProof = Object.freeze([
   Object.freeze({ value: "5+", label: "years building web and backend systems" }),
+  Object.freeze({ value: "20", label: "approved repository evaluation tasks" }),
   Object.freeze({ value: "144", label: "tests in a validated benchmark batch" }),
   Object.freeze({ value: "35", label: "documented smart-contract findings" }),
 ]);
+
+export const aiEvaluationPractice = Object.freeze({
+  eyebrow: "AI evaluation",
+  title: "Evidence-led evaluation for coding-agent outputs and technical responses.",
+  introduction:
+    "I evaluate coding-agent work, technical responses, factuality, search quality, prompts, and rubrics against reproducible evidence. The goal is not a quick score; it is a defensible judgment that explains what worked, what failed, and why.",
+  practices: Object.freeze([
+    Object.freeze({
+      number: "01",
+      title: "Coding-agent evaluation",
+      body: "Review trajectories, repository changes, terminal execution, tests, and final claims to determine whether a result is correct and reproducible.",
+    }),
+    Object.freeze({
+      number: "02",
+      title: "Factuality & rubric quality",
+      body: "Assess source support, search quality, response accuracy, prompts, and rubrics while separating evidence from unsupported conclusions.",
+    }),
+    Object.freeze({
+      number: "03",
+      title: "Benchmark engineering",
+      body: "Author and validate deterministic software tasks with clean-clone checks, regression coverage, and meaningful oracle and no-op baselines.",
+    }),
+  ]),
+  evidence: Object.freeze([
+    "20 approved repository evaluation tasks",
+    "Reviewer responsibilities across software-quality work",
+    "144 deterministic tests in a validated benchmark batch",
+  ]),
+});

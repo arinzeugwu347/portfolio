@@ -3,7 +3,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
 
-export default function ProjectCard({ project, variant = "standard", headingAs = "h3" }) {
+export default function ProjectCard({
+  project,
+  variant = "standard",
+  headingAs = "h3",
+  motionIndex = 0,
+}) {
   const reduceMotion = useReducedMotion();
   const {
     id,
@@ -25,11 +30,17 @@ export default function ProjectCard({ project, variant = "standard", headingAs =
     <motion.article
       className={`project-card project-card--${variant}`}
       aria-labelledby={`${id}-title`}
-      initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : {
+        opacity: 0,
+        x: motionIndex % 2 === 0 ? -24 : 24,
+        y: 18,
+        scale: variant === "featured" ? 0.985 : 1,
+      }}
+      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.14 }}
       transition={{
         duration: reduceMotion ? 0 : 0.58,
+        delay: reduceMotion ? 0 : Math.min(motionIndex * 0.06, 0.24),
         ease: [0.22, 1, 0.36, 1],
       }}
     >
@@ -119,4 +130,5 @@ ProjectCard.propTypes = {
   }).isRequired,
   variant: PropTypes.oneOf(["standard", "featured"]),
   headingAs: PropTypes.oneOf(["h2", "h3"]),
+  motionIndex: PropTypes.number,
 };

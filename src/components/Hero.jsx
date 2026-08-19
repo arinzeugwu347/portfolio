@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import profileImage from "../assets/images/profile.jpeg";
 import { profile } from "../data/profile";
 
-const strengths = ["5+ years building", "Full-stack & backend", "Testing & security"];
+const strengths = [
+  "Full-stack & backend",
+  "AI evaluation & benchmarks",
+  "Technical QA & security",
+];
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
@@ -21,19 +25,21 @@ export default function Hero() {
         <div className="hero__content">
           <motion.div className="availability" {...enter()}>
             <span aria-hidden="true" />
-            Building dependable products and systems
+            Software engineering · AI evaluation · Technical quality
           </motion.div>
 
           <motion.p className="hero__eyebrow" {...enter(0.04)}>
             {profile.title} · {profile.location}
           </motion.p>
           <motion.h1 id="hero-title" {...enter(0.08)}>
-            I turn complex workflows into <em>calm, high-trust</em> products.
+            I build dependable software—and <em>evaluate AI with evidence.</em>
           </motion.h1>
           <motion.p className="hero__lede" {...enter(0.14)}>
-            I&apos;m {profile.publicName}, a software engineer with {profile.experience} of
-            experience building web and backend systems, currently developing full-stack
-            and backend products at {profile.currentCompany}.
+            I&apos;m {profile.publicName}, a software engineer and AI evaluator with {profile.experience} of
+            experience building web and backend systems. I currently develop full-stack
+            and backend products at {profile.currentCompany}. My AI evaluation work spans
+            coding-agent benchmarking, trajectory review, factuality research, and prompt
+            and rubric auditing.
           </motion.p>
 
           <motion.div className="hero__actions" {...enter(0.2)}>
@@ -50,7 +56,20 @@ export default function Hero() {
           </motion.div>
 
           <motion.ul className="hero__strengths" aria-label="Engineering strengths" {...enter(0.26)}>
-            {strengths.map((strength) => <li key={strength}>{strength}</li>)}
+            {strengths.map((strength, index) => (
+              <motion.li
+                key={strength}
+                initial={reduceMotion ? false : { opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: reduceMotion ? 0 : 0.48,
+                  delay: reduceMotion ? 0 : 0.3 + index * 0.07,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {strength}
+              </motion.li>
+            ))}
           </motion.ul>
         </div>
 
@@ -64,15 +83,26 @@ export default function Hero() {
               fetchPriority="high"
             />
             <div className="hero-portrait__caption">
-              <span>Software engineer</span>
-              <strong>Web. Backend. Quality. Security.</strong>
+              <span>Software engineer &amp; AI evaluator</span>
+              <strong>Build. Evaluate. Verify. Secure.</strong>
             </div>
           </div>
-          <div className="hero-portrait__badge" aria-hidden="true">
+          <motion.div
+            className="hero-portrait__badge"
+            aria-hidden="true"
+            animate={reduceMotion ? undefined : {
+              y: [0, -8, 0],
+              rotate: [-9, -6, -9],
+            }}
+            transition={reduceMotion ? undefined : {
+              duration: 3.6,
+              ease: "easeInOut",
+            }}
+          >
             <span>Build</span>
             <FiArrowDownRight />
             <span>Refine</span>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -11,15 +11,16 @@ export default function Experience() {
       tabIndex={-1}
     >
       <div className="shell">
-        <Reveal className="experience-intro">
+        <Reveal className="experience-intro" direction="left" distance={32}>
           <div>
             <p className="section-kicker">Selected experience</p>
-            <h2 id="experience-title">Engineering depth built across products, quality, and security.</h2>
+            <h2 id="experience-title">Engineering depth across products, AI evaluation, quality, and security.</h2>
           </div>
           <div className="experience-intro__copy">
             <p>
-              From product features and backend services to benchmark validation and security review,
-              I bring an evidence-led approach to building and improving dependable software.
+              From product features and backend services to coding-agent evaluation, benchmark
+              validation, and security review, I bring an evidence-led approach to building and
+              improving dependable software.
             </p>
             <a
               className="experience-resume-link"
@@ -33,7 +34,13 @@ export default function Experience() {
 
         <div className="experience-proof" aria-label="Experience highlights">
           {experienceProof.map((proof, index) => (
-            <Reveal key={proof.label} delay={index * 0.06} className="experience-proof__item">
+            <Reveal
+              key={proof.label}
+              className="experience-proof__item"
+              direction="scale"
+              index={index}
+              stagger={0.07}
+            >
               <strong>{proof.value}</strong>
               <span>{proof.label}</span>
             </Reveal>
@@ -46,6 +53,8 @@ export default function Experience() {
               key={entry.id}
               as="li"
               className="experience-item"
+              direction="right"
+              distance={32}
               delay={Math.min(index * 0.025, 0.12)}
             >
               <p className="experience-item__date">{entry.dates}</p>
@@ -64,7 +73,7 @@ export default function Experience() {
           ))}
         </ol>
 
-        <Reveal className="education-card">
+        <Reveal className="education-card" direction="scale">
           <p className="section-kicker">Education</p>
           <div>
             <h3>{profile.education.degree}</h3>

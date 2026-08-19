@@ -1,4 +1,5 @@
 import About from "../components/About";
+import AiEvaluation from "../components/AiEvaluation";
 import FeaturedProjects from "../components/FeaturedProjects";
 import Hero from "../components/Hero";
 import Experience from "../components/Experience";
@@ -10,6 +11,7 @@ export default function Home() {
     <PageWrapper>
       <Hero />
       <About />
+      <AiEvaluation />
       <Experience />
       <FeaturedProjects />
       <Skills />

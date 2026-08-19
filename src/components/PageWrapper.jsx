@@ -1,10 +1,8 @@
-import { motion, useReducedMotion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 export default function PageWrapper({ children, className = "" }) {
-  const reduceMotion = useReducedMotion();
   const mainRef = useRef(null);
   const location = useLocation();
 
@@ -58,18 +56,14 @@ export default function PageWrapper({ children, className = "" }) {
   }, [location.hash, location.pathname]);
 
   return (
-    <motion.main
+    <main
       id="main-content"
       ref={mainRef}
       tabIndex={-1}
       className={className}
-      initial={reduceMotion ? false : { opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={reduceMotion ? undefined : { opacity: 0 }}
-      transition={{ duration: reduceMotion ? 0 : 0.36, ease: "easeOut" }}
     >
       {children}
-    </motion.main>
+    </main>
   );
 }
 

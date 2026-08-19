@@ -1,6 +1,6 @@
 # Arinze Ugwu — Portfolio
 
-A responsive portfolio for Arinze Ugwu, a software engineer based in Enugu, Nigeria with 5+ years of experience across web and backend systems, technical QA, benchmark engineering, and security review. The site presents CV-backed experience and selected work through clear product narratives, an accessible light/dark interface, and a focused contact experience.
+A responsive portfolio for Arinze Ugwu, a software engineer and AI evaluator based in Enugu, Nigeria with 5+ years of experience building web and backend systems, plus experience in coding-agent evaluation, technical QA, benchmark engineering, and security review. The site presents CV-backed experience and selected work through clear product narratives, an accessible light/dark interface, and a focused contact experience.
 
 [View the live portfolio](https://arinze-portfolio.vercel.app/) · [Read the experience timeline](https://arinze-portfolio.vercel.app/#experience) · [Explore all projects](https://arinze-portfolio.vercel.app/projects) · [Contact Arinze](https://arinze-portfolio.vercel.app/contact)
 
@@ -8,10 +8,11 @@ A responsive portfolio for Arinze Ugwu, a software engineer based in Enugu, Nige
 
 - Editorial, responsive visual system designed for mobile through wide desktop layouts
 - FieldNote Triage presented as the flagship project with a verified product screenshot
-- CV-backed experience timeline spanning product engineering, technical QA, benchmark validation, and security
+- Dedicated AI-evaluation practice section grounded in CV-backed coding-agent, factuality, rubric, and benchmark work
+- CV-backed experience timeline spanning product engineering, AI evaluation, technical QA, benchmark validation, and security
 - Current downloadable résumé with a stable public URL and recruiter-friendly filename
 - One canonical project catalog shared by featured and archive views
-- Restrained scroll reveals, accessible route and anchor focus, visible keyboard states, and reduced-motion support
+- Rhythmic route transitions, directional scroll reveals, staggered content motion, accessible route and anchor focus, and reduced-motion support
 - Persistent light/dark theme with safe browser-storage fallback
 - Secure Formspree contact flow with clear submission feedback
 - Social, search and structured metadata for a polished public launch
