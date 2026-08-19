@@ -6,6 +6,7 @@ import { useTheme } from "../theme.js";
 
 const navigation = [
   { label: "Home", to: "/" },
+  { label: "AI evaluation", to: "/#ai-evaluation", hash: true },
   { label: "Experience", to: "/#experience", hash: true },
   { label: "Work", to: "/projects" },
   { label: "Contact", to: "/contact" },
@@ -28,7 +29,7 @@ export default function Header() {
   }, []);
 
   useEffect(() => {
-    const desktopQuery = window.matchMedia("(min-width: 52.01rem)");
+    const desktopQuery = window.matchMedia("(min-width: 58.01rem)");
     const closeAtDesktop = (event) => {
       if (event.matches) setOpenPath(null);
     };

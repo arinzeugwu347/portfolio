@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Header from "./components/Header";
+import RouteTransition from "./components/RouteTransition";
 import SocialFooter from "./components/SocialFooter";
 
 const Home = lazy(() => import("./pages/Home"));
@@ -19,9 +20,9 @@ const siteUrl = "https://arinze-portfolio.vercel.app";
 
 const pageMetadata = {
   "/": {
-    title: "Arinze Ugwu — Software engineer",
+    title: "Arinze Ugwu — Software engineer & AI evaluator",
     description:
-      "Portfolio of Arinze Ugwu, a software engineer with 5+ years building dependable web, backend, testing, and security-focused systems.",
+      "Portfolio of Arinze Ugwu: 5+ years building web and backend systems, plus coding-agent evaluation, technical QA, and security experience.",
     indexable: true,
   },
   "/projects": {
@@ -33,7 +34,7 @@ const pageMetadata = {
   "/contact": {
     title: "Contact — Arinze Ugwu",
     description:
-      "Start a conversation with Arinze Ugwu about software engineering, backend systems, product interfaces, and technical quality.",
+      "Start a conversation with Arinze Ugwu about software engineering, backend systems, AI evaluation, product interfaces, and technical quality.",
     indexable: true,
   },
   "/thank-you": {
@@ -78,22 +79,24 @@ function AnimatedRoutes() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Suspense
-        fallback={(
-          <main id="main-content" tabIndex={-1} className="route-loading">
-            <p role="status">Loading the next page…</p>
-          </main>
-        )}
-      >
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+    <AnimatePresence mode="wait">
+      <RouteTransition key={location.pathname}>
+        <Suspense
+          fallback={(
+            <main id="main-content" tabIndex={-1} className="route-loading">
+              <p role="status">Loading the next page…</p>
+            </main>
+          )}
+        >
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </RouteTransition>
     </AnimatePresence>
   );
 }

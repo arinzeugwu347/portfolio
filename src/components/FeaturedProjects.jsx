@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
       aria-labelledby="featured-projects-title"
     >
       <div className="projects-section__inner">
-        <Reveal>
+        <Reveal direction="left" distance={30}>
           <header className="section-heading section-heading--projects">
             <p className="section-kicker">Selected work</p>
             <h2 id="featured-projects-title">Featured projects</h2>
@@ -28,11 +28,12 @@ export default function FeaturedProjects() {
               key={project.id}
               project={project}
               variant={index === 0 ? "featured" : "standard"}
+              motionIndex={index}
             />
           ))}
         </div>
 
-        <Reveal className="projects-section__footer">
+        <Reveal className="projects-section__footer" direction="right" distance={24}>
           <Link className="project-link project-link--all" to="/projects">
             Explore all projects
             <FiArrowRight aria-hidden="true" focusable="false" />
